@@ -54,7 +54,7 @@ public class ViterbiTest {
 			}
 		}
 		ViterbiSequence viterbiAnswer = testingHMM.viterbiLog(longInput);
-		assertEquals(viterbiAnswer.getProbability(), -1227.47, 0.01);
+		assertEquals(viterbiAnswer.getProbability(), -1227.5, 0.1);
 	}
 	
 	@Test
@@ -72,7 +72,7 @@ public class ViterbiTest {
 		}
 		longInput[2003] = 2;
 		ViterbiSequence viterbiAnswer = testingHMM.viterbiLog(longInput);
-		assertEquals(viterbiAnswer.getProbability(), -1231.809, 0.001);
+		assertEquals(viterbiAnswer.getProbability(), -1231.8, 0.01);
 	}
 
 }
