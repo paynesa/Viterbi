@@ -30,5 +30,38 @@ public class ViterbiTest {
 		assertArrayEquals(testingArray, viterbiPath);
 		assertEquals(0.0237, probability, 0.00001);
 	}
+	
+	@Test
+	public void logTest_1() {
+		getTestingHMM();
+		int[] longInput = new int[2000];
+		for (int i = 0; i < 2000; i ++) {
+			if (i < 500 || (i >= 1000 && i < 1500)) {
+				longInput[i] = 1;
+			}
+			else {
+				longInput[i] = 2;
+			}
+		}
+		ViterbiSequence viterbiAnswer = testingHMM.viterbiLog(longInput);
+		assertEquals(viterbiAnswer.getProbability(), -1227.47, 0.01);
+	}
+	
+	@Test
+	public void logTest_2() {
+		getTestingHMM();
+		int[] longInput = new int[2004];
+		for (int i = 0; i < 2004; i ++) {
+			if (i < 500 || (i >= 1000 && i < 1500) || i > 1999) {
+				longInput[i] = 1;
+			}
+			else {
+				longInput[i] = 2;
+			}
+		}
+		longInput[2003] = 2;
+		ViterbiSequence viterbiAnswer = testingHMM.viterbiLog(longInput);
+		assertEquals(viterbiAnswer.getProbability(), -1231.809, 0.001);
+	}
 
 }
