@@ -1,8 +1,16 @@
+/*Author: Sarah Brogden Payne
+ * a JUnit testing file that tests both the non-logarithmic Viterbi and 
+ * logarithmic Viterbi algorithms. Test cases are taken from Dr. Jean Gallier's
+ * CIS 262 notes available at https://www.cis.upenn.edu/~cis262/cis262-notes-20.html*/
+
+
 import static org.junit.Assert.assertArrayEquals;
 import static org.junit.Assert.assertEquals;
 import org.junit.Test;
 
 public class ViterbiTest {
+	
+	//static HMM used throughout the tests
 	static HMM testingHMM;
 	
 	//Method to get an HMM to execute an example test 
@@ -21,6 +29,7 @@ public class ViterbiTest {
 
 	
 	@Test
+	//Test the basic implementation without logarithmic Viterbi
 	public void test_1112() {
 		getTestingHMM();
 		int[] testingArray = {1,1,1,2};
@@ -32,6 +41,7 @@ public class ViterbiTest {
 	}
 	
 	@Test
+	//Test a longer input with logarithmic Viterbi
 	public void logTest_1() {
 		getTestingHMM();
 		int[] longInput = new int[2000];
@@ -48,6 +58,7 @@ public class ViterbiTest {
 	}
 	
 	@Test
+	//test another longer input with logarithmic Viterbi
 	public void logTest_2() {
 		getTestingHMM();
 		int[] longInput = new int[2004];

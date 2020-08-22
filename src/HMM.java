@@ -1,5 +1,6 @@
-/**Author: Sarah Payne
- * A class representing a HMM, taking as input A, B, and pi.
+/**Author: Sarah Brogden Payne
+ * A class representing a HMM, taking as input A, B, and pi as defined in 
+ * Dr. Jean Gallier's CIS262 notes (https://www.cis.upenn.edu/~cis262/cis262-notes-20.html)
  * This class also includes methods to implement the Viterbi algorithm
  * regularly or using logarithms. Both methods return a ViterbiSequence,
  * which is a class storing the most likely path and its probability**/
@@ -16,16 +17,16 @@ public class HMM {
         this.pi = pi;
     }
     
-    /**An implementation of the viterbi algorithm given a sequence of state
+    /**An implementation of the Viterbi algorithm given a sequence of state
      * indexes, which correspond to some states**/
     public ViterbiSequence viterbi(int[] omega) {
-        //convert the states from being 1-indexed to 0-indexed for ease 
+        //convert the states from being 1-indexed to 0-indexed for ease -- input is expected to be 1-indexed 
         int[] w = new int[omega.length];
         for (int i = 0; i < omega.length; i++) {
             w[i] = omega[i] - 1;
         }
         int start = w[0];
-        //initalize an array to store the scores
+        //initialize an array to store the scores
         double[] scores = new double[a.length];
         //initialize scores
         for (int j = 0; j < a.length; j++) {
@@ -78,7 +79,7 @@ public class HMM {
             path[i - 1] = curr + 1;
             it = curr;
         }
-        //initialize and return a viterbisequence with the path and probability
+        //initialize and return a ViterbiSequence with the path and probability
         ViterbiSequence answer = new ViterbiSequence(currmax, path);
         return answer;
     }
@@ -146,7 +147,7 @@ public class HMM {
             path[i - 1] = curr + 1;
             it = curr;
         }
-        //initialize and return a viterbisequence storing path and probability
+        //initialize and return a ViterbiSequence storing path and probability
         ViterbiSequence answer = new ViterbiSequence(currmax, path);
         return answer;
     }
