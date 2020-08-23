@@ -47,7 +47,7 @@
     <target description="Build all projects which reference this project. Useful to propagate changes." name="build-refprojects"/>
     <target name="test">
         <mkdir dir="${junit.output.dir}"/>
-        <junit fork="yes" printsummary="withOutAndErr">
+        <junit fork="yes" printsummary="withOutAndErr" haltonfailure="true" haltonerror="true">
             <formatter type="xml"/>
             <test name="ViterbiTest" todir="${junit.output.dir}"/>
             <jvmarg line="-ea"/>
