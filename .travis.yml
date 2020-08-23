@@ -14,7 +14,7 @@ jdk:
  - openjdk11
  
 # before running junit, we need to install some optional portions of ant used to run the junit tests
- before_install: 	
+before_install: 	
  - sudo apt-get install ant-optional
  
 
