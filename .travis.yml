@@ -15,7 +15,6 @@ jdk:
  - openjdk11
  
 before_install: 
- - sudo apt-get install an
  - sudo apt-get install ant-optional
  
 
@@ -30,4 +29,4 @@ include: JUnit4
 # If a build is successful, the code is submitted for coverage analysis
 script: 
  - ant build
- - ant test
+ - ant test -d
