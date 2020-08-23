@@ -13,17 +13,15 @@ language: java
 jdk:
  - openjdk11
  
+# before running junit, we need to install some optional portions of ant used to run the junit tests
+ before_install: 	
+ - sudo apt-get install ant-optional
  
 
 include: JUnit4
-# Each job in Travis CI has several steps:
-# https://docs.travis-ci.com/user/job-lifecycle/
-# The 'language: java' directive sets up sane defaults to test common java applications
-# We use the defaults for installing dependencies, compiling and testing maven applications
-# In our case it will be 'mvn install' followed by 'mvn test'
 
-# This is to enable CodeCov's coverage
-# If a build is successful, the code is submitted for coverage analysis
+# We build the project and then run the JUnit tests; the build is successful if it compiles and the 
+#tests pass 
 script: 
  - ant build
  - ant test 
