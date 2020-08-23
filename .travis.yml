@@ -18,8 +18,6 @@ before_install:
  - sudo apt-get install ant-optional
  
 
-include: JUnit4
-
 # We build the project and then run the JUnit tests; the build is successful if it compiles and the 
 #tests pass 
 script: 
