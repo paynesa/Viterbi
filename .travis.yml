@@ -13,6 +13,11 @@ language: java
 # https://docs.travis-ci.com/user/reference/xenial/#jvm-clojure-groovy-java-scala-support
 jdk:
  - openjdk11
+ 
+before_install: 
+ - sudo apt-get install an
+ - sudo apt-get install ant-optional
+ 
 
 include: JUnit4
 # Each job in Travis CI has several steps:
