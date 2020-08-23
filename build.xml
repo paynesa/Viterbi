@@ -16,10 +16,12 @@
     <path id="Viterbi.classpath">
         <pathelement location="bin"/>
         <path refid="JUnit 4.libraryclasspath"/>
+        <pathelement location="lib/junit-4.12.jar"/>
     </path>
     <path id="run.test.classpath">
         <path refid="Viterbi.classpath"/>
         <path refid="JUnit 4.libraryclasspath"/>
+        <pathelement location="lib/junit-4.12.jar"/>
     </path>
     <target name="init">
         <mkdir dir="bin"/>
