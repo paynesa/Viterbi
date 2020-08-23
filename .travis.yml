@@ -23,4 +23,6 @@ include: JUnit4
 
 # This is to enable CodeCov's coverage
 # If a build is successful, the code is submitted for coverage analysis
-script: ant build
+script: 
+	ant build
+	ant test 
