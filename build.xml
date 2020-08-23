@@ -16,12 +16,10 @@
     <path id="Viterbi.classpath">
         <pathelement location="bin"/>
         <path refid="JUnit 4.libraryclasspath"/>
-        <pathelement location="lib/junit-4.12.jar"/>
     </path>
-    <path id="run.ViterbiTest (1).classpath">
+    <path id="run.test.classpath">
         <path refid="Viterbi.classpath"/>
         <path refid="JUnit 4.libraryclasspath"/>
-        <pathelement location="lib/junit-4.12.jar"/>
     </path>
     <target name="init">
         <mkdir dir="bin"/>
@@ -51,7 +49,7 @@
             <formatter type="xml"/>
             <test name="ViterbiTest" todir="${junit.output.dir}"/>
             <jvmarg line="-ea"/>
-            <classpath refid="run.ViterbiTest (1).classpath"/>
+            <classpath refid="run.test.classpath"/>
         </junit>
     </target>
     <target name="junitreport">
