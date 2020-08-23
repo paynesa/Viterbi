@@ -25,3 +25,4 @@ include: JUnit4
 # If a build is successful, the code is submitted for coverage analysis
 script: 
  - ant build
+ - ant test
